@@ -1,0 +1,21 @@
+.box_mensaje{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100%;
+    text-align: center;
+    font: 16px 'Nunito';
+    box-sizing: border-box;
+    padding: 6px 5px;
+    color: #FFF;
+}
+.box_info{
+    background: #007bff;
+}
+.box_error{
+    background: #dc3545;
+}
+.box_ok{
+    background: #28a745;
+}

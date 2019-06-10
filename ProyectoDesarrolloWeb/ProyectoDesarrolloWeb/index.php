@@ -143,8 +143,7 @@
             </div>
         </div>
     </section>
-    
-    
+
     <?php
         # Empieza Registro usuario
         if (isset($_POST['btnRegistrar'])) {
@@ -165,7 +164,7 @@
     ?>
 
     <?php echo $BoxRegistro; ?>
-
+    
     <?php
         # Empieza Comprobar acceso
         if (isset($_POST['btnAcceso'])) {
@@ -175,24 +174,13 @@
             if (isset($_POST['formUsuario']) && !empty(trim($_POST['formUsuario'])) && isset($_POST['formClave']) && !empty(trim($_POST['formClave']))) {
                 # Todo OK, comprobar login              
                 
-                if ( $formUsuario == 'tatiana' && $formClave == '1234' || $formUsuario == 'admin' && $formClave == 'admin' ) {
-                    # Acceso Concedido
-                    # Crear Sesion de Login
-                    $_SESSION['idusuario'] = $formUsuario;
-                    # Definir Variables de Clase
-                    echo '<script type="text/javascript">window.location="index.php";</script>';
+                if ( $formUsuario == '' && $formClave == '') {
+                     echo "<div class='form-type-send'><h5>Datos no validos</h5></div>";
                 } else {
-                    # Error al comprobar usuario
-                    echo $claseUsuario->MostrarMensaje("Datos Incorrectos", "error");
                 }
-            } else {
-                # Error algun campo quedo vacio
-                echo $claseUsuario->MostrarMensaje("Se deben llenar todos los campos obligatorios.", "error");
             }
-            
-        } else {}
         # Termina Comprobar acceso
-    ?>
+    ?> 
 
     <?php
         # Empieza Buscar Bici
